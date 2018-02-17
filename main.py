@@ -153,9 +153,9 @@ if __name__ == '__main__':
     fb_client = client.Client(SEND_ACC_ID, SEND_ACC_PASS)
     hist = read_history()
     try:
-        for post in soup.select(PostSelectorOnMainSite)[2:5]:
+        for post in soup.select(PostSelectorOnMainSite):
             try:
-                time.sleep(1)
+                time.sleep(10)
                 title = post.select(".mbn-title")[0].text
                 timestring = post.select(".mbn-date")[0].text
                 summary = post.select(".mbn-item-summary")[0].text
